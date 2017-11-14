@@ -1,0 +1,294 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../var/lib/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 14, sass/screen.scss */
+body {
+  color: #888;
+  font-family: 'Roboto', sans-serif;
+  line-height: 2;
+}
+/* line 20, sass/screen.scss */
+body a {
+  color: #888;
+}
+/* line 23, sass/screen.scss */
+body a:hover {
+  color: #A00;
+}
+/* line 29, sass/screen.scss */
+body .txt_barre {
+  text-decoration: line-through;
+  color: #A00;
+}
+/* line 35, sass/screen.scss */
+body .text_grey {
+  font-size: 1rem;
+  color: #888;
+}
+/* line 42, sass/screen.scss */
+body h1, body h3 {
+  font-size: 2.2rem;
+  width: 70%;
+  display: block;
+  float: left;
+}
+/* line 50, sass/screen.scss */
+body .main {
+  position: absolute;
+  width: 500px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  justify-content: center;
+  margin-top: 0;
+  border: 1px solid #E5E5E5;
+}
+/* line 67, sass/screen.scss */
+body .main #page1 {
+  z-index: 90;
+}
+/* line 71, sass/screen.scss */
+body .main #page2 {
+  z-index: 80;
+}
+/* line 74, sass/screen.scss */
+body .main .main-header {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  z-index: 100;
+  padding: 15px;
+  border-bottom: 1px solid #E5E5E5;
+  background-color: white;
+}
+/* line 89, sass/screen.scss */
+body .main .main-header .add, body .main .main-header .close {
+  float: right;
+  background-color: #ffffff;
+  -moz-border-radius: 42px;
+  -webkit-border-radius: 42px;
+  border-radius: 42px;
+  border: 1px solid #969696;
+  cursor: pointer;
+  color: #888;
+  font-family: Arial;
+  font-size: 28px;
+  padding: 4px 25px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 4px;
+  -webkit-box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.75);
+}
+/* line 114, sass/screen.scss */
+body .main .main-header .add:hover, body .main .main-header .close:hover {
+  color: #A00;
+  border: 1px solid #A00;
+}
+/* line 122, sass/screen.scss */
+body .main .main-header .close {
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -webkit-transform: rotate(45deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+}
+/* line 138, sass/screen.scss */
+body .main .main-container {
+  position: absolute;
+  display: block;
+  margin-top: 100px;
+  width: 92%;
+  height: 450px;
+  padding: 20px;
+  background-color: #FFF;
+  overflow: hidden;
+}
+/* line 149, sass/screen.scss */
+body .main .main-container .menu {
+  display: none;
+}
+/* line 153, sass/screen.scss */
+body .main .main-container .item-title {
+  font-size: 1rem;
+  font-weight: bold;
+  float: left;
+  width: 100%;
+  padding-top: 5px;
+}
+/* line 161, sass/screen.scss */
+body .main .main-container .task_description {
+  margin-left: 15px;
+  font-size: 0.8em;
+  display: none;
+}
+/* line 166, sass/screen.scss */
+body .main .main-container .task_infos {
+  margin-left: 30px;
+  font-size: 1em;
+  border-bottom: 1px solid #E5E5E5;
+  display: none;
+}
+/* line 174, sass/screen.scss */
+body .main .main-container .menu {
+  float: right;
+  width: 100%;
+  display: none;
+}
+/* line 181, sass/screen.scss */
+body .main .main-container .menu li {
+  padding-right: 15px;
+  float: right;
+}
+/* line 185, sass/screen.scss */
+body .main .main-container .menu li a {
+  font-size: 0.8em;
+}
+/* line 192, sass/screen.scss */
+body .main .main-container .note {
+  border-bottom: 1px solid #E5E5E5;
+  padding-left: 10px;
+}
+/* line 196, sass/screen.scss */
+body .main .main-container .note input {
+  border: none;
+}
+/* line 200, sass/screen.scss */
+body .main .main-container .note textarea {
+  border: none;
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+/* line 211, sass/screen.scss */
+body .main .main-container .bt_OK a {
+  display: block;
+  width: 50%;
+  height: 30px;
+  background-color: #A00;
+  text-align: center;
+  color: white;
+  padding: 2px;
+  border-radius: 50px;
+  margin: auto;
+  text-decoration: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+/* line 241, sass/screen.scss */
+body .main .cercle, body .main .cercle2, body .main .cercle3 {
+  background-color: black;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  float: left;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+/* line 250, sass/screen.scss */
+body .main .cercle2 {
+  background-color: white;
+  border: 1px solid #888;
+}
+/* line 256, sass/screen.scss */
+body .main .cercle3 {
+  background-color: #A00;
+  width: 15px;
+  height: 15px;
+}
+/* line 267, sass/screen.scss */
+body .main-footer {
+  border-top: 1px solid #E5E5E5;
+  display: flex;
+  width: 100%;
+  align: center;
+  height: 100px;
+  bottom: 0;
+  vertical-align: baseline;
+}
+/* line 277, sass/screen.scss */
+body .main-footer li {
+  padding-right: 15px;
+  float: right;
+}
+/* line 281, sass/screen.scss */
+body .main-footer h2 {
+  margin-right: 15px;
+}
+
+/* line 291, sass/screen.scss */
+.display {
+  display: block;
+}
