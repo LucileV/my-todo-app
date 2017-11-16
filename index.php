@@ -176,6 +176,7 @@
 	<!-- Fiche pour ajouter une nouvelle tâche -->
 
 	<div id="page2" class="page2"> 
+		<form action="">
 			
 			<div class="actions">
 				<ul class="menu">
@@ -221,19 +222,18 @@
 						</div>
 				</div>
 			</div>
-			
-			<span class="bt_OK"><a href="">OK for this new task</a></span>
+		
 
 		<div class="main-footer">
 		<h2>Add task and create new more one:</h2> 
 			<ul class="display">
 					
-				<li><a href="">Add task</a></li>
+				<li><a href="index.php?task_ID=1; ?>">Add task</a></li>
 
 			</ul>
 		</div>
 
-
+		</form>
 	</div>	
 	<!-- FIN page 2 -->
 

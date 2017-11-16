@@ -295,19 +295,20 @@ body .main-footer {
   bottom: 0;
   left: 0;
   right: 0;
-  vertical-align: baseline;
+  margin-top: 50px;
+  padding-top: 50px;
 }
-/* line 331, sass/screen.scss */
+/* line 332, sass/screen.scss */
 body .main-footer li {
   padding-right: 15px;
   float: right;
 }
-/* line 335, sass/screen.scss */
+/* line 336, sass/screen.scss */
 body .main-footer h2 {
   margin-right: 15px;
 }
 
-/* line 345, sass/screen.scss */
+/* line 346, sass/screen.scss */
 .display {
   display: block;
 }
