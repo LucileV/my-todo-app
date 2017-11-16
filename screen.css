@@ -86,15 +86,16 @@ body a:hover {
 body .text_grey {
   font-size: 1rem;
   color: #888;
+  font-family: 'Roboto', sans-serif;
 }
-/* line 39, sass/screen.scss */
+/* line 40, sass/screen.scss */
 body h1, body h3 {
   font-size: 2.2rem;
   width: 70%;
   display: block;
   float: left;
 }
-/* line 47, sass/screen.scss */
+/* line 48, sass/screen.scss */
 body .main {
   position: absolute;
   top: 0;
@@ -109,7 +110,7 @@ body .main {
   width: 500px;
   height: 100%;
 }
-/* line 64, sass/screen.scss */
+/* line 65, sass/screen.scss */
 body .main .main-container {
   margin-top: 100px;
   right: 0px;
@@ -118,21 +119,36 @@ body .main .main-container {
   padding: 20px;
   background-color: #FFF;
 }
-/* line 77, sass/screen.scss */
+/* line 74, sass/screen.scss */
+body .main .main-container .bt_OK a {
+  display: block;
+  width: 50%;
+  height: 30px;
+  background-color: #A00;
+  text-align: center;
+  color: white;
+  padding: 2px;
+  border-radius: 50px;
+  margin: auto;
+  text-decoration: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+/* line 94, sass/screen.scss */
 body .main #page1, body .main #page2 {
   height: 100%;
   width: 100%;
   margin-right: -4px;
   bottom: 100px;
 }
-/* line 89, sass/screen.scss */
+/* line 106, sass/screen.scss */
 body .main #page2 {
   margin-top: 6px;
   background-color: #FFF;
   transition: transform 0.5s ease-in-out;
   display: none;
 }
-/* line 101, sass/screen.scss */
+/* line 118, sass/screen.scss */
 body .main .main-header {
   position: absolute;
   top: 0;
@@ -142,10 +158,9 @@ body .main .main-header {
   height: 75px;
   z-index: 100;
   padding: 15px;
-  border-bottom: 1px solid #E5E5E5;
   background-color: white;
 }
-/* line 116, sass/screen.scss */
+/* line 130, sass/screen.scss */
 body .main .main-header .add, body .main .main-header .close {
   float: right;
   background-color: #ffffff;
@@ -165,12 +180,12 @@ body .main .main-header .add, body .main .main-header .close {
   -moz-box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 11px -4px rgba(0, 0, 0, 0.75);
 }
-/* line 141, sass/screen.scss */
+/* line 155, sass/screen.scss */
 body .main .main-header .add:hover, body .main .main-header .close:hover {
   color: #A00;
   border: 1px solid #A00;
 }
-/* line 149, sass/screen.scss */
+/* line 163, sass/screen.scss */
 body .main .main-header .close {
   -ms-transform: rotate(45deg);
   /* IE 9 */
@@ -178,84 +193,78 @@ body .main .main-header .close {
   /* Chrome, Safari, Opera */
   transform: rotate(45deg);
 }
-/* line 166, sass/screen.scss */
+/* line 174, sass/screen.scss */
+body .main .main-header::after {
+  height: 1px;
+  content: " ";
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #E5E5E5;
+  margin-top: 79px;
+}
+/* line 191, sass/screen.scss */
 body .main .item-title {
   font-size: 1rem;
   font-weight: bold;
   width: 100%;
   padding-top: 5px;
 }
-/* line 173, sass/screen.scss */
+/* line 198, sass/screen.scss */
 body .main .task_description {
   margin-left: 15px;
   color: #666;
 }
-/* line 179, sass/screen.scss */
+/* line 204, sass/screen.scss */
 body .main .task_infos {
   margin-left: 30px;
   font-size: 0.85em;
   padding-bottom: 15px;
   border-bottom: 1px solid #E5E5E5;
 }
-/* line 188, sass/screen.scss */
+/* line 213, sass/screen.scss */
 body .main .menu {
   float: right;
   width: 100%;
 }
-/* line 195, sass/screen.scss */
+/* line 220, sass/screen.scss */
 body .main .menu li {
   padding-right: 15px;
   float: right;
 }
-/* line 199, sass/screen.scss */
+/* line 224, sass/screen.scss */
 body .main .menu li a {
   font-size: 0.8em;
 }
-/* line 206, sass/screen.scss */
+/* line 231, sass/screen.scss */
 body .main .note {
   border-bottom: 1px solid #E5E5E5;
   padding-left: 10px;
 }
-/* line 210, sass/screen.scss */
+/* line 235, sass/screen.scss */
 body .main .note input {
   border: none;
 }
-/* line 214, sass/screen.scss */
+/* line 239, sass/screen.scss */
 body .main .note textarea {
   border: none;
   height: 100px;
   width: 100%;
   overflow: hidden;
 }
-/* line 225, sass/screen.scss */
-body .main .note .bt_OK a {
-  display: block;
-  width: 50%;
-  height: 30px;
-  background-color: #A00;
-  text-align: center;
-  color: white;
-  padding: 2px;
-  border-radius: 50px;
-  margin: auto;
-  text-decoration: none;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-/* line 245, sass/screen.scss */
+/* line 255, sass/screen.scss */
 body .main .note #done_list h2 {
   text-decoration: line-through;
 }
-/* line 256, sass/screen.scss */
+/* line 266, sass/screen.scss */
 body .main .note #late_list h2 {
   text-decoration: line-through;
   color: #A00;
 }
-/* line 261, sass/screen.scss */
+/* line 271, sass/screen.scss */
 body .main .note #late_list h2 a {
   color: #A00;
 }
-/* line 282, sass/screen.scss */
+/* line 292, sass/screen.scss */
 body .main .cercle, body .main .cercle2, body .main .cercle3 {
   background-color: black;
   border-radius: 50%;
@@ -265,18 +274,18 @@ body .main .cercle, body .main .cercle2, body .main .cercle3 {
   margin-right: 10px;
   margin-top: 7px;
 }
-/* line 291, sass/screen.scss */
+/* line 301, sass/screen.scss */
 body .main .cercle2 {
   background-color: white;
   border: 1px solid #888;
   width: 13px;
   height: 13px;
 }
-/* line 300, sass/screen.scss */
+/* line 310, sass/screen.scss */
 body .main .cercle3 {
   background-color: #A00;
 }
-/* line 309, sass/screen.scss */
+/* line 319, sass/screen.scss */
 body .main-footer {
   border-top: 1px solid #E5E5E5;
   display: flex;
@@ -288,17 +297,17 @@ body .main-footer {
   right: 0;
   vertical-align: baseline;
 }
-/* line 321, sass/screen.scss */
+/* line 331, sass/screen.scss */
 body .main-footer li {
   padding-right: 15px;
   float: right;
 }
-/* line 325, sass/screen.scss */
+/* line 335, sass/screen.scss */
 body .main-footer h2 {
   margin-right: 15px;
 }
 
-/* line 335, sass/screen.scss */
+/* line 345, sass/screen.scss */
 .display {
   display: block;
 }

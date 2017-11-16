@@ -32,6 +32,7 @@ body {
 	.text_grey {
 		font-size: 1rem;
 		color: $gray;
+		font-family: 'Roboto', sans-serif;
 	}
 
 
@@ -70,6 +71,22 @@ body {
 				padding: 20px; 	
 				background-color: #FFF;
 				
+				.bt_OK a {
+
+						display: block;
+
+						width: 50%;
+						height: 30px;
+						background-color: $bordeau;
+						text-align: center;
+						color: white;
+						padding:2px;
+						border-radius:50px;
+						margin: auto;
+						text-decoration: none;
+						margin-top: 15px; margin-bottom:15px;
+
+					}
 
 			}
 		
@@ -108,11 +125,8 @@ body {
 				height: 75px;
 				z-index: 100;
 				padding: 15px;
-				border-bottom: 1px solid $grey_ligth;
 				background-color: white;
 
-
-				
 					.add {
 
 						float: right;
@@ -152,11 +166,22 @@ body {
 					    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
 					    transform: rotate(45deg);
 					}
-					
-
+			
 					
 
 			}
+
+			.main-header::after {
+					height: 1px;
+					content: " ";
+					width: 100%;
+					display: block;
+					border-bottom: 1px solid $grey_ligth;
+					margin-top: 79px;
+				}
+			
+
+			
 		
 			//todilist
 
@@ -222,22 +247,7 @@ body {
 
 				
 				
-				.bt_OK a {
-
-						display: block;
-
-						width: 50%;
-						height: 30px;
-						background-color: $bordeau;
-						text-align: center;
-						color: white;
-						padding:2px;
-						border-radius:50px;
-						margin: auto;
-						text-decoration: none;
-						margin-top: 15px; margin-bottom:15px;
-
-					}
+				
 				
 				
 				#done_list {

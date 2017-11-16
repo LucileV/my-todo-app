@@ -5,13 +5,15 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>To Do List</title>
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="dist/accordion.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-	<link rel="stylesheet" href="librairies/js-datepicker/datepicker.css">
+
+	<link rel="stylesheet" type="text/css" href="librairies/mtr-datepicker/dist/mtr-datepicker.min.css?rel=1510749724090" />
+    <link rel="stylesheet" type="text/css" href="librairies/mtr-datepicker/dist/mtr-datepicker.default-theme.min.css?rel=1510749724093" />
 	
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <body>
 
@@ -24,7 +26,7 @@
 			<div class="add" id="add"> + </div>
 			
 		</div>
-
+		
 <!-- Page générale -->
 <div class="main-container">
 	
@@ -160,7 +162,7 @@
 				<h2>Show:</h2> 
 					<ul class="display">
 							
-								<li><a href="" id="alltask">All task</a></li>
+								<li><a href="" id="alltask" method="post" action="#?task_ID=<?php htmlspecialchars($_GET['task_ID']); ?>">All task</a></li>
 								<li><a href="" id="todotask">Todo task</a></li>
 								<li><a href="" id="dontask">Done task</a></li>
 					</ul>
@@ -191,23 +193,33 @@
 				<h2 class="item-title">
 				DESCRIPTION
 				</h2>
-				<textarea placeholder="My do to title" class="text_grey "></textarea>
+				<textarea placeholder="Details" class="text_grey "></textarea>
 				
 			</div>
-			<div class="note">
-				<h2 class="item-title">
-				START AT
-				</h2>
-				<input id="date_start" type="date" class="text_grey">
-				            
-			
+			<div class="note accordion-container" id="date">
+				<div class="ac">
+					<h2 class="item-title"><a href="#" class="ac-q">START AT</a></h2>
+						<div class="ac-a">
+							
+							<div class="task_description ac-a">
+									<div id="datepicker-start"></div>
+							</div>
+												
+						</div>
+				</div>
 			</div>
-			<div class="note">
-				<h2 class="item-title">
-				END AT
-				</h2>
-				<input id="date_end" type="date" class="text_grey">
 			
+			<div class="note accordion-container" id="date">
+				<div class="ac">
+					<h2 class="item-title"><a href="#" class="ac-q">END AT</a></h2>
+						<div class="ac-a">
+							
+							<div class="task_description ac-a">
+									<div id="datepicker-end"></div>
+							</div>
+												
+						</div>
+				</div>
 			</div>
 			
 			<span class="bt_OK"><a href="">OK for this new task</a></span>
@@ -239,9 +251,31 @@
 
 <script src="dist/accordion.js"></script>
 <script src="script.js"></script> 
-<script src="librairies/js-datepicker/datepicker.min.js"></script>
-	
 
+    <script type="text/javascript" src="librairies/mtr-datepicker/dist/mtr-datepicker.min.js?rel=1510749724094"></script>
+
+    <script type="text/javascript">
+      var demoDatepicker = new MtrDatepicker({
+        target: 'datepicker-start'
+      });
+    </script>
+
+       <script type="text/javascript">
+      var demoDatepicker2 = new MtrDatepicker({
+        target: 'datepicker-end'
+      });
+    </script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-72115428-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
 
 </body>
 </html>
