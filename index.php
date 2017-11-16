@@ -1,10 +1,13 @@
-	<!DOCTYPE html>
+<?php include 'core/request.php' ?>
+
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>To Do List</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="dist/accordion.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
 	<link rel="stylesheet" href="librairies/js-datepicker/datepicker.css">
 	
@@ -12,6 +15,8 @@
 
 <body>
 
+
+<!-- MAIN -->
 <div class="main">
 
 		<div class="main-header">
@@ -19,142 +24,156 @@
 			<div class="add" id="add"> + </div>
 			
 		</div>
+
+<!-- Page générale -->
+<div class="main-container">
 	
-	<!-- Liste des taches -->
-	<div class="main-container" id="page1">
-		
-			<div class="content" id="todo">
-
-				<ul class="list" id="todo_list">
-
-					<li class="list-item">
-						<header class="item_header">
-
-							<div class="actions">
-									<ul class="menu">
-										<li><a href=""><b>Done</b></a></li>
-										<li><a href="">Delete</a></li>
-										<li><a href="">Edit</a></li>
-									</ul>
-							</div>
-								
-							<h2 class="item-title">
-							<div class="cercle2"></div><a href="" onclick="">Take a shower</a>
-							</h2>
-
-							
-						</header>
-
-
-							
-
-							<div class="task_description showme">
-							My bus arrived at 11:00 
-							</div>
-						<footer class="task_infos showme">
-						<span>Started on: 2/1/2017 - 12.00</span>
-						<span>End time: 3/10/2017 - 15:00</span>
-						</footer>	
-				
-					</li>
-					<li class="list-item">
-						<header class="item_header">
-
-							<div class="actions showme">
-									<ul class="menu">
-										<li><a href=""><b>Done</b></a></li>
-										<li><a href="">Delete</a></li>
-										<li><a href="">Edit</a></li>
-									</ul>
-							</div>
-								
-							<h2 class="item-title">
-							<div class="cercle2"></div><a href="">Take a shower</a>
-							</h2>
-
-							
-						</header>
-							
-
-							<div class="task_description showme">
-							My bus arrived at 11:00
-							</div>
-						<footer class="task_infos showme">
-						<span>Started on: 2/1/2017 - 12.00</span>
-						<span>End time: 3/10/2017 - 15:00</span>
-						</footer>	
-				
-					</li>
-				</ul>
-				
-			</div>
-			
+	<!-- page 1 -->
+	<div class="page1" id="page1">
+			<!-- Liste des taches done -->
 			<div class="content" id="done">
 
-				<ul class="list" id="todo_list_done">
+				Done
+				<?php while ($donnees = $tasks_done->fetch(PDO::FETCH_ASSOC)) { ?>	
 
-					<li class="list-item">
-						<header class="item_header">
-							<h2 class="item-title">
-							<div class="cercle2"></div><a href="">Take a shower</a>
+				<ul class="list" id="done_list">
+					<li class="list-item accordion-container">
+						<div class="ac item_header">
+							<h2>
+							 <a href="#" class="ac-q"><div class="cercle"></div> <?php echo $donnees['task_title']; ?></a>
 							</h2>
-						</header>
-							
-					</li>
-					<li class="list-item">
-						<header class="item_header">
-							<h2 class="item-title">
-							<div class="cercle2"></div><a href="">Take a shower</a>
-							</h2>
-						</header>
-							
-					</li>
-					<li class="list-item">
-						<header class="item_header">
-							<h2 class="item-title">
-							<div class="cercle2"></div><a href="">Take a shower</a>
-							</h2>
-						</header>
-							
-					</li>
-				</ul>
-				
-			</div>
-			
+								<div class="ac-a">
+									<p>
+										<div class="actions ">
+											<ul class="menu">
+												<li><a href=""><b>Done</b></a></li>
+												<li><a href="">Delete</a></li>
+												<li><a href="">Edit</a></li>
+											</ul>
+										</div>
 
-			<div class="content" id="late">
-
-				<ul class="list" id="todo_list_late">
-
-					<li class="list-item">
-						<header class="item_header">
-							<h2 class="item-title">
-							<div class="cercle3"></div><a href="" class="txt_barre">Sortir le chien</a>
-							</h2>
-						</header>		
-					</li>
-				</ul>
-				
-			</div>
-
-
-	<div class="main-footer">
-		<h2>Show:</h2> 
-			<ul class="display">
+										<div class="task_description ac-a">
+								<?php echo $donnees['task_description']; ?> 
+								</div>
+									<footer class="task_infos ">
+										<span>Started on : <?php echo $donnees['task_start']; ?> - </span>
+										<span>End time : <?php echo $donnees['task_end']; ?> </span>
+									</footer>	
 					
-						<li><a href="">All task</a></li>
-						<li><a href="">Todo task</a></li>
-						<li><a href="">Done task</a></li>
-			</ul>
-	</div>
+									</p>	
+								</div>
+								
+							</div>
+					</li>
+				<?php } $tasks_done->closeCursor();?>
+				</ul>
+				
+			</div>
+			<!-- Fin Liste des taches done -->
+
+			
+		
+			<!-- Liste des taches todo -->
+			<div class="content" id="todo">
+				To do
+			<?php while ($donnees = $tasks_todo->fetch(PDO::FETCH_ASSOC)) { ?>	
+				<ul class="list" id="todo_list">
+					<li class="list-item accordion-container">
+
+						<div class="ac item_header">
+							<h2>
+							<a href="#" class="ac-q"><div class="cercle2"></div> <?php echo $donnees['task_title']; ?></a>
+							</h2>
+							<div class="ac-a">
+								<p>
+									<div class="actions ">
+										<ul class="menu">
+											<li><a href=""><b>Done</b></a></li>
+											<li><a href="">Delete</a></li>
+											<li><a href="">Edit</a></li>
+										</ul>
+									</div>
+
+									<div class="task_description ac-a">
+							<?php echo $donnees['task_description']; ?> 
+							</div>
+								<footer class="task_infos ">
+									<span>Started on : <?php echo $donnees['task_start']; ?> - </span>
+									<span>End time : <?php echo $donnees['task_end']; ?> </span>
+								</footer>	
+				
+								</p>	
+							</div>
+								
+							</div>
+					</li>
+				<?php } $tasks_todo->closeCursor();?>
+				</ul>
+				
+			</div>
+			<!-- Fin Liste des taches todo -->
+			
+			
+			<!-- Liste des taches late -->
+			<div class="content" id="late">
+				Late
+				<?php while ($donnees = $tasks_late->fetch(PDO::FETCH_ASSOC)) { ?>	
+				<ul class="list" id="todo_list">
+					<li class="list-item accordion-container">
+
+						<div class="ac item_header">
+							<h2>
+							<a href="#" class="ac-q"><div class="cercle3"></div> <?php echo $donnees['task_title']; ?></a>
+							</h2>
+							<div class="ac-a">
+								<p>
+									<div class="actions ">
+										<ul class="menu">
+											<li><a href=""><b>Done</b></a></li>
+											<li><a href="">Delete</a></li>
+											<li><a href="">Edit</a></li>
+										</ul>
+									</div>
+
+									<div class="task_description ac-a">
+							<?php echo $donnees['task_description']; ?> 
+							</div>
+								<footer class="task_infos ">
+									<span>Started on : <?php echo $donnees['task_start']; ?> - </span>
+									<span>End time : <?php echo $donnees['task_end']; ?> </span>
+								</footer>	
+				
+								</p>	
+							</div>
+								
+							</div>
+					</li>
+				<?php } $tasks_todo->closeCursor();?>
+				</ul>
+				
+			</div>
+			<!-- Fin Liste des taches late -->
+	
+
+			<!-- footer 1 -->
+			<div class="main-footer">
+				<h2>Show:</h2> 
+					<ul class="display">
+							
+								<li><a href="" id="alltask">All task</a></li>
+								<li><a href="" id="todotask">Todo task</a></li>
+								<li><a href="" id="dontask">Done task</a></li>
+					</ul>
+			</div>
+			<!-- Fin footer 1 -->
 
 	</div>
 
-	<!-- FIN  Liste des taches -->
+	<!-- FIN page 1 -->
 
 	<!-- Fiche pour ajouter une nouvelle tâche -->
 
-	<div class="main-container" id="page2"> 
+	<div id="page2" class="page2"> 
 			
 			<div class="actions">
 				<ul class="menu">
@@ -197,28 +216,32 @@
 		<h2>Add task and create new more one:</h2> 
 			<ul class="display">
 					
-						<li><a href="">Add task</a></li>
+				<li><a href="">Add task</a></li>
+
 			</ul>
 		</div>
 
 
 	</div>	
-	<!-- FIN Liste des taches -->
+	<!-- FIN page 2 -->
 
 				
-				
+</div>
+<!-- Page générale -->	
 
 </div>
+<!-- FIN MAIN -->
 
 
 
 
 
 
-
-
+<script src="dist/accordion.js"></script>
 <script src="script.js"></script> 
 <script src="librairies/js-datepicker/datepicker.min.js"></script>
+	
+
 
 </body>
 </html>

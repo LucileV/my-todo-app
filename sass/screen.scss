@@ -7,6 +7,7 @@
 $gray	 : #888;
 $bordeau : #A00;
 $grey_ligth : #E5E5E5;
+$grey_dark : #666;
 
 
 
@@ -19,6 +20,7 @@ body {
 
 	a {
 		color: $gray;
+		text-decoration: none;
 
 		&:hover {
 			color : $bordeau;
@@ -26,11 +28,6 @@ body {
 
 	}
 
-	.txt_barre {
-
-    	text-decoration: line-through;
-    	color: $bordeau;
-    }
 	
 	.text_grey {
 		font-size: 1rem;
@@ -50,27 +47,57 @@ body {
 	.main {
 
 		position: absolute;
-		width: 500px;
-		top:0;
+		top: 0;
 		bottom: 0;
 		left: 0;
-		right: 0;
-		//align-items: center;
+		right: 0;	
 		margin : auto;
-		//padding: 15px;
 		justify-content: center;
 		margin-top: 0;
 		border: 1px solid $grey_ligth;
-	
+		overflow: auto;
+		width: 500px;
+		height: 100%;
 
-		//
-	#page1 {
-		z-index: 90;
-	}
+
+
+			.main-container {	
+				
+	   		 	margin-top: 100px;
+	   		 	right: 0px;
+	   		 	bottom: 100px;
+	   		 	left: 0px;
+				padding: 20px; 	
+				background-color: #FFF;
+				
+
+			}
 		
-	#page2 {
-		z-index: 80;
-	}
+		//
+			#page1 {
+				//z-index: 90;
+				
+				height: 100%;
+				width: 100%;
+				margin-right: -4px;
+				bottom: 100px;
+				
+
+
+			}
+				
+			#page2 {
+				@extend #page1;
+				//z-index: 80;
+				margin-top: 6px;
+				background-color: #FFF;
+				transition: transform 0.5s ease-in-out;
+				display: none;	
+			}
+
+
+		
+		
 			.main-header {
 				
 				position: absolute;
@@ -130,44 +157,31 @@ body {
 					
 
 			}
-
-		
 		
 			//todilist
 
-			.main-container {
-				position: absolute;
-				display: block;
-	   		 	margin-top: 100px;
-				width: 92%;
-				height: 450px;
-				padding: 20px; 	
-				background-color: #FFF;
+			
 				
-				overflow: hidden;
-
-				.menu{
-					display: none;
-				}
 
 				.item-title {
 					font-size: 1rem;
-					font-weight: bold;
-					float: left;
+					font-weight: bold;	
 					width: 100%;
 					padding-top: 5px;
 				}
 
 				.task_description {
 					margin-left: 15px;
-					font-size: 0.8em;
-					display: none;
+					//display: none;
+					color : $grey_dark;
+
 				}
 				.task_infos {
 					margin-left: 30px;
-					font-size: 1em;
+					font-size: 0.85em;
+					padding-bottom: 15px;
 					border-bottom: 1px solid $grey_ligth;
-					display: none;
+					//display: none;
 					
 				}
 
@@ -176,7 +190,7 @@ body {
 					//display: flex;
 					float: right;
 					width: 100%;
-					display: none;
+					//display: none;
 
 						li {
 							padding-right : 15px;
@@ -206,7 +220,7 @@ body {
 						}
 
 
-				}
+				
 				
 				.bt_OK a {
 
@@ -226,7 +240,34 @@ body {
 					}
 				
 				
+				#done_list {
+					
+					h2 {
+					
+					text-decoration: line-through;
 
+					}
+
+
+				}
+
+				#late_list {
+					
+					h2 {
+					
+					text-decoration: line-through;
+					color : $bordeau;
+
+						a {
+							color : $bordeau;
+						}
+
+					}
+
+
+				}
+				
+				
 
 				
 				
@@ -245,19 +286,20 @@ body {
 			  height:14px;
 			  float: left;
 			  margin-right: 10px;
-			  margin-top: 10px;
+			  margin-top: 7px;
 			}
 			.cercle2 {
 			 @extend .cercle;
 			  background-color: white;
 			  border: 1px solid $gray;
+			  width:13px;
+			  height:13px;
+			 
 			 
 			}
 			.cercle3 {
 			 @extend .cercle;
 			  background-color: $bordeau;
-			   width:15px;
-			  height:15px;
 			 
 			}
 
@@ -265,13 +307,15 @@ body {
 	}
 
 	.main-footer{
-			
+			//position: absolute;	
 			border-top: 1px solid $grey_ligth;
 			display: flex;
 			width: 100%;
 			align:center;
 			height: 100px;
 			bottom: 0;
+			left: 0;
+			right: 0;
 			vertical-align:baseline;
 
 				li {
@@ -293,3 +337,5 @@ body {
 	display: block; 
 
 }
+
+
